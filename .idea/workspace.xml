@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b00443e-1f94-4dc3-816b-d4c0cb753243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlackBoxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlackBoxCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EdgeBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EdgeBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MysteryBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MysteryBox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -369,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667935754244</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Now asking users to handle loop in drawSelf&#10;Moved drawself earlier in file&#10;renumbered TODOs">
+      <created>1667939161377</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1667939161377</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +392,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed error where all MysteryBoxes showed a ball regardless of hasBall flag." />
     <MESSAGE value="Created reset() method.&#10;Moved ball randomization from constructor to reset and now call reset from constructor." />
     <MESSAGE value="Added resetButton to UI" />
     <MESSAGE value="Connected resetButton action to myPanel's reset() method." />
@@ -409,6 +416,7 @@
     <MESSAGE value="Removed &quot;resetting&quot; message from reset..." />
     <MESSAGE value="changed &quot;clear_all_debug_marks&quot; to &quot;clearAllDebugMarks&quot;" />
     <MESSAGE value="added clearAllDebugMarks() to revealAllBalls." />
-    <option name="LAST_COMMIT_MESSAGE" value="added clearAllDebugMarks() to revealAllBalls." />
+    <MESSAGE value="Now asking users to handle loop in drawSelf&#10;Moved drawself earlier in file&#10;renumbered TODOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now asking users to handle loop in drawSelf&#10;Moved drawself earlier in file&#10;renumbered TODOs" />
   </component>
 </project>

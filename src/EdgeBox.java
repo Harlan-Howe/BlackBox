@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class EdgeBox implements BlackBoxCell
+public class EdgeBox extends BlackBoxCell
 {
 
     public static final int STATUS_HIT = 1;

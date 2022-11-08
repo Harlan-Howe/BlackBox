@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class MysteryBox implements BlackBoxCell
+public class MysteryBox extends BlackBoxCell
 {
 
     public static final int STATUS_DEBUG_SHOW = 1;

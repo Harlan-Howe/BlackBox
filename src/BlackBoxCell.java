@@ -1,16 +1,16 @@
 import java.awt.*;
 
-public interface  BlackBoxCell
+public abstract class  BlackBoxCell
 {
 
-    final int STATUS_BLANK = 0;
+    final static int STATUS_BLANK = 0;
 
-    final int CELL_SIZE = 60;
+    final static int CELL_SIZE = 60;
 
 
-    public void drawSelf(Graphics g);
+    public abstract void drawSelf(Graphics g);
 
-    public void setStatus(int s);
+    public abstract void setStatus(int s);
 
-    public int getStatus();
+    public abstract int getStatus();
 }
