@@ -54,6 +54,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         }
 
         reset();
+        // want repeatable results each time? Replace that line with resetWithTestData().
     }
 
     /**
@@ -104,8 +105,8 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     public int[] getPositionInFrontOf(int[] pos, int direction)
     {
         int[] p = {pos[0],pos[1]};
-        p[0] += DELTAS[direction][0];
-        p[1] += DELTAS[direction][1];
+        // TODO: #1 You need to write this! Presently, it is just regurgitating the position that it received.
+
         return p;
     }
 
@@ -119,7 +120,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontRightOf(int[] pos, int direction)
     {
-        return getPositionInFrontOf(getPositionInFrontOf(pos,direction),turnRight(direction));
+        // TODO: #2 You need to write this! Presently, it is just regurgitating the position that it received.
+        // hint: you may be able to use combinations of getPositionInFrontOf() and turnRight() to make this work.
+        return pos;
     }
 
     /**
@@ -132,7 +135,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontLeftOf(int[] pos, int direction)
     {
-        return getPositionInFrontOf(getPositionInFrontOf(pos, direction),turnLeft(direction));
+        // TODO: #3 You need to write this! Presently, it is just regurgitating the position that it received.
+        // hint: you may be able to use combinations of getPositionInFrontOf() and turnLeft() to make this work.
+        return pos;
     }
 
     /**
@@ -348,9 +353,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         int[] p = startingPosition;
         int d = direction;
 
-        clear_all_debug_marks();
+        clearAllDebugMarks();
 
-        // TODO: write this method:
+        // TODO: #4 write this method:
 
         // do the following until you either hit a ball or exit the grid:
         //     1) Check whether the space in front of you has a ball. If so, return null.
@@ -362,47 +367,19 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         //           b) Skip to step 5.
         //     4) Move forwards one space.
         //     5) If p holds an edgebox, you've exited the mysterybox area, so return p.
-        //     6) DEBUGGING only: ((MysteryBox)myGrid[p[0]][p[1]]).setStatus(MysteryBox.STATUS_DEBUG_SHOW);
-
-        while(true)
-        {
-
-            int[] frontPoint = getPositionInFrontOf(p,d);
-            if (myGrid[frontPoint[0]][frontPoint[1]] instanceof EdgeBox)
-                return frontPoint;
-            if (((MysteryBox)myGrid[frontPoint[0]][frontPoint[1]]).hasBall())
-                return null; // it's a hit!
-
-            int[] rightFrontPoint = getPositionFrontRightOf(p,d);
-            if (isMysteryBox(rightFrontPoint)&&((MysteryBox)myGrid[rightFrontPoint[0]][rightFrontPoint[1]]).hasBall())
-            {
-                d = turnLeft(d);
-            }
-            else
-            {
-                int[] leftFrontPoint = getPositionFrontLeftOf(p, d);
-                if (isMysteryBox(leftFrontPoint) && ((MysteryBox) myGrid[leftFrontPoint[0]][leftFrontPoint[1]]).hasBall())
-                {
-                    d = turnRight(d);
-
-                } else
-                {
-                    p = frontPoint;
-                }
-            }
-            if (! isMysteryBox(p))
-                return p;
+        //     6) DEBUGGING only: (myGrid[p[0]][p[1]]).setStatus(MysteryBox.STATUS_DEBUG_SHOW);
 
 
-            (myGrid[p[0]][p[1]]).setStatus(MysteryBox.STATUS_DEBUG_SHOW);
-        }
+
+        return null; // stub function temp code.
+
     }
 
     /**
-     * reset all of the mystery boxes that have the green debug marks back to the blank status without disturbing
+     * reset all the mystery boxes that have the green debug marks back to the blank status without disturbing
      * any of the pencilled marks.
      */
-    public void clear_all_debug_marks()
+    public void clearAllDebugMarks()
     {
         for (int i = 1; i <=MYSTERY_BOX_GRID_SIZE; i++)
             for (int j = 1; j <=MYSTERY_BOX_GRID_SIZE; j++)
