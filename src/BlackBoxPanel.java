@@ -80,7 +80,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int turnLeft(int dir)
     {
-        return (dir+3)%4;
+        // TODO: #0 You write this! At the moment it is wrong - it just returns the original direction.
+
+        return dir; // temp stub function code.
     }
 
     /**
@@ -91,7 +93,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      * @return the direction number corresponding to a 90° rotation to the left.
      */public int turnRight(int dir)
     {
-        return (dir+1)%4;
+        // TODO: #1 You write this! At the moment it is wrong - it just returns the original direction.
+
+        return dir; // temp stub function code.
     }
 
     /**
@@ -105,7 +109,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     public int[] getPositionInFrontOf(int[] pos, int direction)
     {
         int[] p = {pos[0],pos[1]};
-        // TODO: #1 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #2 You need to write this! Presently, it is just regurgitating the position that it received.
 
         return p;
     }
@@ -120,7 +124,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontRightOf(int[] pos, int direction)
     {
-        // TODO: #2 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #3 You need to write this! Presently, it is just regurgitating the position that it received.
         // hint: you may be able to use combinations of getPositionInFrontOf() and turnRight() to make this work.
         return pos;
     }
@@ -135,7 +139,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontLeftOf(int[] pos, int direction)
     {
-        // TODO: #3 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #4 You need to write this! Presently, it is just regurgitating the position that it received.
         // hint: you may be able to use combinations of getPositionInFrontOf() and turnLeft() to make this work.
         return pos;
     }
@@ -185,6 +189,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public void revealAllBalls()
     {
+        clearAllDebugMarks();
         for (int r = 1; r <= MYSTERY_BOX_GRID_SIZE; r++)
             for (int c = 1; c <= MYSTERY_BOX_GRID_SIZE; c++)
                 ((MysteryBox) myGrid[r][c]).setShouldShowBall(true);
@@ -355,7 +360,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
 
         clearAllDebugMarks();
 
-        // TODO: #4 write this method:
+        // TODO: #5 write this method:
 
         // do the following until you either hit a ball or exit the grid:
         //     1) Check whether the space in front of you has a ball. If so, return null.
