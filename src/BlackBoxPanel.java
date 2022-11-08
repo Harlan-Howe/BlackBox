@@ -71,6 +71,29 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         soundPlayer.loadSound("Reset.wav"); // Reset sound by "Wdomino" at https://freesound.org/s/508575/ shared via Creative Commons
     }
 
+    @Override
+    public void paintComponent(Graphics g)
+    {
+
+        super.paintComponent(g);
+
+        g.setColor(Color.BLACK);
+        g.setFont(scoreFont);
+        g.drawString("Number of Shots Taken: "+ numShots, LEFT_MARGIN, TOP_MARGIN-20);
+
+        if (revealedMode)
+        {
+            g.setColor(new Color(200,200,255));
+            g.fillRect(LEFT_MARGIN-3, TOP_MARGIN-3, (MYSTERY_BOX_GRID_SIZE+2)*BlackBoxCell.CELL_SIZE+6,
+                                                    (MYSTERY_BOX_GRID_SIZE+2)*BlackBoxCell.CELL_SIZE+6);
+        }
+
+        // now draw all the boxes.
+        // TODO: #0 you do this... loop through all the spots in myGrid. For each one, check that it is non-null. If so,
+        //  tell that particular BlackBoxCell to drawSelf(g).
+
+    }
+
     /**
      * returns a direction that corresponds to a 90° ccw rotation from the given direction.
      * I.e. DIRECTION_RIGHT --> DIRECTION_UP; DIRECTION_DOWN --> DIRECTION_RIGHT; DIRECTION_LEFT --> DIRECTION_DOWN;
@@ -80,7 +103,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int turnLeft(int dir)
     {
-        // TODO: #0 You write this! At the moment it is wrong - it just returns the original direction.
+        // TODO: #1 You write this! At the moment it is wrong - it just returns the original direction.
 
         return dir; // temp stub function code.
     }
@@ -93,7 +116,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      * @return the direction number corresponding to a 90° rotation to the left.
      */public int turnRight(int dir)
     {
-        // TODO: #1 You write this! At the moment it is wrong - it just returns the original direction.
+        // TODO: #2 You write this! At the moment it is wrong - it just returns the original direction.
 
         return dir; // temp stub function code.
     }
@@ -109,7 +132,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     public int[] getPositionInFrontOf(int[] pos, int direction)
     {
         int[] p = {pos[0],pos[1]};
-        // TODO: #2 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #3 You need to write this! Presently, it is just regurgitating the position that it received.
 
         return p;
     }
@@ -124,7 +147,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontRightOf(int[] pos, int direction)
     {
-        // TODO: #3 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #4 You need to write this! Presently, it is just regurgitating the position that it received.
         // hint: you may be able to use combinations of getPositionInFrontOf() and turnRight() to make this work.
         return pos;
     }
@@ -139,7 +162,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] getPositionFrontLeftOf(int[] pos, int direction)
     {
-        // TODO: #4 You need to write this! Presently, it is just regurgitating the position that it received.
+        // TODO: #5 You need to write this! Presently, it is just regurgitating the position that it received.
         // hint: you may be able to use combinations of getPositionInFrontOf() and turnLeft() to make this work.
         return pos;
     }
@@ -255,28 +278,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
 
     }
 
-    @Override
-    public void paintComponent(Graphics g)
-    {
 
-        super.paintComponent(g);
-
-        g.setColor(Color.BLACK);
-        g.setFont(scoreFont);
-        g.drawString("Number of Shots Taken: "+ numShots, LEFT_MARGIN, TOP_MARGIN-20);
-
-        if (revealedMode)
-        {
-            g.setColor(new Color(200,200,255));
-            g.fillRect(LEFT_MARGIN-3, TOP_MARGIN-3, (MYSTERY_BOX_GRID_SIZE+2)*BlackBoxCell.CELL_SIZE+6, (MYSTERY_BOX_GRID_SIZE+2)*BlackBoxCell.CELL_SIZE+6);
-        }
-
-        // now draw all the boxes.
-        for (int i=0; i<MYSTERY_BOX_GRID_SIZE+2; i++)
-            for (int j=0; j<MYSTERY_BOX_GRID_SIZE+2; j++)
-                if (myGrid[i][j] != null)
-                    myGrid[i][j].drawSelf(g);
-    }
 
     /**
      * toggles the Pencilled/blank state of the MysteryBox at location (r, c) and plays a sound.
@@ -360,7 +362,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
 
         clearAllDebugMarks();
 
-        // TODO: #5 write this method:
+        // TODO: #6 write this method:
 
         // do the following until you either hit a ball or exit the grid:
         //     1) Check whether the space in front of you has a ball. If so, return null.

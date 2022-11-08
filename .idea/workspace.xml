@@ -362,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667922671561</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="added clearAllDebugMarks() to revealAllBalls.">
+      <created>1667935754244</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1667935754244</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Clicking on an edge cell now runs the path and updates that edge cell. Several new methods to perform this.&#10;Added a method &quot;revealAllBalls.&quot;" />
     <MESSAGE value="fixed error where all MysteryBoxes showed a ball regardless of hasBall flag." />
     <MESSAGE value="Created reset() method.&#10;Moved ball randomization from constructor to reset and now call reset from constructor." />
     <MESSAGE value="Added resetButton to UI" />
@@ -402,6 +408,7 @@
     <MESSAGE value="Moved button to north panel" />
     <MESSAGE value="Removed &quot;resetting&quot; message from reset..." />
     <MESSAGE value="changed &quot;clear_all_debug_marks&quot; to &quot;clearAllDebugMarks&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed &quot;clear_all_debug_marks&quot; to &quot;clearAllDebugMarks&quot;" />
+    <MESSAGE value="added clearAllDebugMarks() to revealAllBalls." />
+    <option name="LAST_COMMIT_MESSAGE" value="added clearAllDebugMarks() to revealAllBalls." />
   </component>
 </project>
