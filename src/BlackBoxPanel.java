@@ -6,12 +6,12 @@ import java.awt.event.MouseListener;
 public class BlackBoxPanel extends JPanel implements MouseListener
 {
     // variables
-    private BlackBoxCell[][] myGrid;
-    private char latestLabel;
-    private int numShots;
-    private boolean revealedMode;
+    private BlackBoxCell[][] myGrid; // the grid of MysteryBoxes (black) and EdgeBoxes (gray)
+    private char latestLabel;  // what letter was used last when displaying matches?
+    private int numShots; // how many shots have been tried?
+    private boolean revealedMode; // are we still playing or showing the answers?
     private SoundPlayer soundPlayer;
-    private boolean firstRun;
+    private boolean firstRun; // is this the first round we are playing? Used to suppress reset sound.
     private Font scoreFont;
 
     // constants
@@ -74,7 +74,6 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     @Override
     public void paintComponent(Graphics g)
     {
-
         super.paintComponent(g);
 
         g.setColor(Color.BLACK);
@@ -205,7 +204,11 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      * @param p = (row, column)
      * @return - whether the item at p of the grid is an EdgeBox.
      */
-    public boolean isEdgeBox(int[] p) { return isEdgeBox(p[0],p[1]);}
+    public boolean isEdgeBox(int[] p)
+    {
+        return isEdgeBox(p[0],p[1]);
+    }
+
     /**
      * Tells all the MysteryBoxes that they should show the ball, if they have one; activates "revealedMode" and plays
      * a sound.
@@ -227,7 +230,6 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public void reset()
     {
-
         latestLabel = 'A';
         for (int r=0; r<=MYSTERY_BOX_GRID_SIZE+1; r++)
             for (int c=0; c<=MYSTERY_BOX_GRID_SIZE+1; c++)
@@ -262,6 +264,9 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         firstRun = false;
     }
 
+    /**
+     * like reset(), but with the balls placed at some specific, predetermined locations.
+     */
     public void resetWithTestData()
     {
         reset();
@@ -277,8 +282,6 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         repaint();
 
     }
-
-
 
     /**
      * toggles the Pencilled/blank state of the MysteryBox at location (r, c) and plays a sound.
@@ -310,6 +313,22 @@ public class BlackBoxPanel extends JPanel implements MouseListener
             return;
 
         // identify the initial direction of movement for this shot, based on which edge of the board this is.
+        int direction = getEntryDirection(startPos);
+
+        // fire the beam!
+        numShots++;
+        int[] exitPos = findExitPoint(startPos,direction);
+
+        markEdgeBox(startPos, exitPos);
+    }
+
+    /**
+     * find the direction that a beam is going if it starts at the EdgeBox at the given startPos
+     * @param startPos - the (row, col) of the EdgeBox where we are starting.
+     * @return - the direction the beam is starting to move.
+     */
+    private int getEntryDirection(int[] startPos)
+    {
         int direction;
         if (startPos[0]==0) // top edge
             direction = DIRECTION_DOWN;
@@ -319,11 +338,18 @@ public class BlackBoxPanel extends JPanel implements MouseListener
             direction = DIRECTION_RIGHT;
         else // right edge
             direction = DIRECTION_LEFT;
+        return direction;
+    }
 
-
-        numShots++;
-        int[] exitPos = findExitPoint(startPos,direction);
-
+    /**
+     * A beam entered the board at startPos and exited at exitPos (or didn't exit, in which case, exitPos is null), so
+     * we mark the EdgeBox at startPos, and maybe another one at exitPos.
+     * @param startPos
+     * @param exitPos
+     */
+    private void markEdgeBox(int[] startPos, int[] exitPos)
+    {
+        // decide how to mark this EdgeBox and mark it
         if (exitPos == null) // if it didn't exit, that means we hit a ball.
         {
             myGrid[startPos[0]][startPos[1]].setStatus(EdgeBox.STATUS_HIT);
