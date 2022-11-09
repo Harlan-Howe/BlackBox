@@ -44,12 +44,15 @@ public class BlackBoxPanel extends JPanel implements MouseListener
         for (int i=1; i<=MYSTERY_BOX_GRID_SIZE; i++)
         {
             for (int j = 1; j <= 8; j++)
-                myGrid[j][i] = new MysteryBox(LEFT_MARGIN + i * BlackBoxCell.CELL_SIZE, TOP_MARGIN + j * BlackBoxCell.CELL_SIZE);
+                myGrid[j][i] = new MysteryBox(LEFT_MARGIN + i * BlackBoxCell.CELL_SIZE,
+                        TOP_MARGIN + j * BlackBoxCell.CELL_SIZE);
 
             for (int k = 0; k <= MYSTERY_BOX_GRID_SIZE+1; k += MYSTERY_BOX_GRID_SIZE+1)
             {
-                myGrid[i][k] = new EdgeBox(LEFT_MARGIN + k * BlackBoxCell.CELL_SIZE, TOP_MARGIN + i * BlackBoxCell.CELL_SIZE);
-                myGrid[k][i] = new EdgeBox(LEFT_MARGIN + i * BlackBoxCell.CELL_SIZE, TOP_MARGIN + k * BlackBoxCell.CELL_SIZE);
+                myGrid[i][k] = new EdgeBox(LEFT_MARGIN + k * BlackBoxCell.CELL_SIZE,
+                        TOP_MARGIN + i * BlackBoxCell.CELL_SIZE);
+                myGrid[k][i] = new EdgeBox(LEFT_MARGIN + i * BlackBoxCell.CELL_SIZE,
+                        TOP_MARGIN + k * BlackBoxCell.CELL_SIZE);
             }
         }
 
@@ -63,12 +66,19 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     public void loadSounds()
     {
         soundPlayer = new SoundPlayer();
-        soundPlayer.loadSound("EnergyBounce.wav"); // Energy Bounce by "magnuswalker" at https://freesound.org/s/523088/ shared via Creative Commons
-        soundPlayer.loadSound("Punch.wav"); // "Martial arts fast punch" at https://mixkit.co/free-sound-effects/
-        soundPlayer.loadSound("Chirp.wav"); // "Retro game notification" at https://mixkit.co/free-sound-effects/
-        soundPlayer.loadSound("Hmm.wav"); // Hmm sound by "DAN2008" at https://freesound.org/s/165011/ shared via Creative Commons
-        soundPlayer.loadSound("Reveal.wav"); // Reveal sound by "GameAudio" at https://freesound.org/s/220171/ shared via Creative Commons
-        soundPlayer.loadSound("Reset.wav"); // Reset sound by "Wdomino" at https://freesound.org/s/508575/ shared via Creative Commons
+        // Energy Bounce by "magnuswalker" at https://freesound.org/s/523088/ shared via Creative Commons
+        soundPlayer.loadSound("EnergyBounce.wav");
+        // "Martial arts fast punch" at https://mixkit.co/free-sound-effects/
+        soundPlayer.loadSound("Punch.wav");
+        // "Retro game notification" at https://mixkit.co/free-sound-effects/
+        soundPlayer.loadSound("Chirp.wav");
+        // Hmm sound by "DAN2008" at https://freesound.org/s/165011/ shared via Creative Commons
+        soundPlayer.loadSound("Hmm.wav");
+        // Reveal sound by "GameAudio" at https://freesound.org/s/220171/ shared via Creative Commons
+        soundPlayer.loadSound("Reveal.wav");
+        // Reset sound by "Wdomino" at https://freesound.org/s/508575/ shared via Creative Commons
+        soundPlayer.loadSound("Reset.wav");
+
     }
 
     @Override
@@ -137,7 +147,8 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     }
 
     /**
-     * finds the row and column directly in front AND one to the right of the given position, assuming one is facing in the given direction.
+     * finds the row and column directly in front AND one to the right of the given position, assuming one is facing in
+     * the given direction.
      * Example 1: if pos is (3,4) and direction is DIRECTION_RIGHT, then return (4,5).
      * Example 2: if pos is (3,4) and direction is DIRECTION_UP, then return (2,5).
      * @param pos - starting (row, column)
@@ -152,7 +163,8 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     }
 
     /**
-     * finds the row and column directly in front AND one to the left of the given position, assuming one is facing in the given direction.
+     * finds the row and column directly in front AND one to the left of the given position, assuming one is facing in
+     * the given direction.
      * Example 1: if pos is (3,4) and direction is DIRECTION_RIGHT, then return (2,5).
      * Example 2: if pos is (3,4) and direction is DIRECTION_UP, then return (2,3).
      * @param pos - starting (row, column)
@@ -372,17 +384,18 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     }
 
     /**
-     * A shot is being fired into the grid of Mystery boxes from the edgeBox at startingPosition, and this method will return
-     * the (r,c) of the edgebox where it exits the grid, if any.
+     * A shot is being fired into the grid of Mystery boxes from the edgeBox at startingPosition, and this method will
+     * return the (r,c) of the edgebox where it exits the grid, if any.
      * @param startingPosition - the (r,c) of the edgebox where the shot starts.
-     * @param direction - the direction the shot is initially moving, one of DIRECTION_RIGHT, DIRECTION_DOWN, DIRECTION_LEFT,
-     *            or DIRECTION_UP.
+     * @param direction - the direction the shot is initially moving, one of DIRECTION_RIGHT, DIRECTION_DOWN,
+     *                  DIRECTION_LEFT, or DIRECTION_UP.
      * @return - a 2-element array of (r, c) for the EdgeBox where the shot exits, or null, if the shot hit a ball
      * head on.
      */
     public int[] findExitPoint(int[] startingPosition, int direction)
     {
-        // p and d are the location of the shot - they change over the course of this method, but the pos and direction don't.
+        // p and d are the location of the shot - they change over the course of this method, but the pos and direction
+        // don't.
         int[] p = startingPosition;
         int d = direction;
 
