@@ -344,8 +344,8 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     /**
      * A beam entered the board at startPos and exited at exitPos (or didn't exit, in which case, exitPos is null), so
      * we mark the EdgeBox at startPos, and maybe another one at exitPos.
-     * @param startPos
-     * @param exitPos
+     * @param startPos - the location of the EdgeBox where the beam entered
+     * @param exitPos - the location of the EdgeBox where the beam exited, or null (if it didn't).
      */
     private void markEdgeBox(int[] startPos, int[] exitPos)
     {
@@ -419,10 +419,10 @@ public class BlackBoxPanel extends JPanel implements MouseListener
                 if ((myGrid[i][j]).getStatus() == MysteryBox.STATUS_DEBUG_SHOW)
                     (myGrid[i][j]).setStatus(MysteryBox.STATUS_BLANK);
     }
-
+    // --------------------------------------------------------------------------------- MouseListener required methods
     @Override
     /**
-     * The user just let go of the mouse inside the panel. If it is on a MysteryBox, toggle it's pencil status; otherwise
+     * The user just let go of the mouse inside the panel. If it is on a MysteryBox, toggle its pencil status; otherwise
      * if it is an edgeBox, process the shot from that edge.
      */
     public void mouseReleased(MouseEvent e)

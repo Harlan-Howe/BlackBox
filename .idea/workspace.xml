@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b00443e-1f94-4dc3-816b-d4c0cb753243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlackBoxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -383,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667939841488</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Improved some documentation&#10;Extracted methods from processShot() for clarity.">
+      <created>1668008199568</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1668008199568</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added resetButton to UI" />
     <MESSAGE value="Connected resetButton action to myPanel's reset() method." />
     <MESSAGE value="error fix: all balls were starting revealed after reset; now all balls are hidden after reset." />
     <MESSAGE value="Fixed error: reset was not removing existing balls; just adding more." />
@@ -423,6 +428,7 @@
     <MESSAGE value="added clearAllDebugMarks() to revealAllBalls." />
     <MESSAGE value="Now asking users to handle loop in drawSelf&#10;Moved drawself earlier in file&#10;renumbered TODOs" />
     <MESSAGE value="Changed BlackBoxCell to an abstract class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed BlackBoxCell to an abstract class." />
+    <MESSAGE value="Improved some documentation&#10;Extracted methods from processShot() for clarity." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved some documentation&#10;Extracted methods from processShot() for clarity." />
   </component>
 </project>
