@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b00443e-1f94-4dc3-816b-d4c0cb753243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/BlackBoxPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlackBoxCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EdgeBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EdgeBox.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2CDhC7KZXOsihAuFLxBkBVAY8uU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,7 +48,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/harlanhowe/IdeaProjects/BlackBox2022",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -389,7 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668008199568</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Improved javadoc for markEdgeBox()">
+      <created>1668008538706</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1668008538706</updated>
+    </task>
+    <task id="LOCAL-00043" summary="cleaned up overlong lines.">
+      <created>1668008690941</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1668008690941</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,8 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Connected resetButton action to myPanel's reset() method." />
-    <MESSAGE value="error fix: all balls were starting revealed after reset; now all balls are hidden after reset." />
     <MESSAGE value="Fixed error: reset was not removing existing balls; just adding more." />
     <MESSAGE value="moved latestLabel = 'A' from constructor to reset, so that it resets on replay." />
     <MESSAGE value="Adjusted margins.&#10;Added number of shots taken counter and indicator" />
@@ -429,6 +449,8 @@
     <MESSAGE value="Now asking users to handle loop in drawSelf&#10;Moved drawself earlier in file&#10;renumbered TODOs" />
     <MESSAGE value="Changed BlackBoxCell to an abstract class." />
     <MESSAGE value="Improved some documentation&#10;Extracted methods from processShot() for clarity." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved some documentation&#10;Extracted methods from processShot() for clarity." />
+    <MESSAGE value="Improved javadoc for markEdgeBox()" />
+    <MESSAGE value="cleaned up overlong lines." />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up overlong lines." />
   </component>
 </project>
