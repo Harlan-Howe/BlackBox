@@ -77,4 +77,9 @@ public class EdgeBox extends BlackBoxCell
             myLabel = s.substring(0,1).toUpperCase();
     }
 
+    public boolean hasBall()
+    {
+        return false;  // Edge Boxes never have a ball in them.
+    }
+
 }
