@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b00443e-1f94-4dc3-816b-d4c0cb753243" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlackBoxCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlackBoxCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EdgeBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EdgeBox.java" afterDir="false" />
-    </list>
+    <list default="true" id="6b00443e-1f94-4dc3-816b-d4c0cb753243" name="Changes" comment="New system" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +72,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BlackBoxRunner">
+  <component name="RunManager" selected="JUnit.BlackBoxPanelTest">
     <configuration name="BlackBoxRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BlackBoxRunner" />
       <module name="BlackBox2022" />
@@ -94,10 +89,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BlackBoxRunner" />
+      <item itemvalue="JUnit.BlackBoxPanelTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BlackBoxRunner" />
         <item itemvalue="JUnit.BlackBoxPanelTest" />
+        <item itemvalue="Application.BlackBoxRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -411,7 +410,31 @@
       <option name="project" value="LOCAL" />
       <updated>1668008690941</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Made hasBall() an abstract method of BlackBoxCell">
+      <option name="closed" value="true" />
+      <created>1698295083503</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1698295083503</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Implemented hasBall() --&gt; always false">
+      <option name="closed" value="true" />
+      <created>1698295105561</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1698295105561</updated>
+    </task>
+    <task id="LOCAL-00046" summary="New system">
+      <option name="closed" value="true" />
+      <created>1698295116341</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1698295116341</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,9 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed error: reset was not removing existing balls; just adding more." />
-    <MESSAGE value="moved latestLabel = 'A' from constructor to reset, so that it resets on replay." />
-    <MESSAGE value="Adjusted margins.&#10;Added number of shots taken counter and indicator" />
     <MESSAGE value="Added &quot;Revealed mode&quot; - graphical indicator toggled by &quot;reveal&quot; &amp; &quot;reset&quot; buttons." />
     <MESSAGE value="Revealed Mode precludes clicking on edges or mystery squares. Changed GUI cue from pink to light blue." />
     <MESSAGE value="Added sounds, including a SoundPlayer class that we can reuse for other projects." />
@@ -451,6 +471,9 @@
     <MESSAGE value="Improved some documentation&#10;Extracted methods from processShot() for clarity." />
     <MESSAGE value="Improved javadoc for markEdgeBox()" />
     <MESSAGE value="cleaned up overlong lines." />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up overlong lines." />
+    <MESSAGE value="Made hasBall() an abstract method of BlackBoxCell" />
+    <MESSAGE value="Implemented hasBall() --&gt; always false" />
+    <MESSAGE value="New system" />
+    <option name="LAST_COMMIT_MESSAGE" value="New system" />
   </component>
 </project>
