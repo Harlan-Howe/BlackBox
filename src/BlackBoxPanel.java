@@ -396,7 +396,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     {
         // p and d are the location and direction of the shot as it moves - they change over the course of this method,
         // but the startingPosition and direction don't change.
-        int[] p = startingPosition;
+        int[] p = {startingPosition[0], startingPosition[1]};  // makes a copy of startingPosition
         int d = direction;
 
         clearAllDebugMarks();
