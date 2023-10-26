@@ -202,7 +202,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     /**
      * checks whether the given row and column are within the light gray area of the grid (but not the corners)
      * @param r - row
-     * @param c - colu,n
+     * @param c - column
      * @return - whether the item at (r, c) of the grid is an EdgeBox.
      */
     public boolean isEdgeBox(int r, int c)
@@ -432,12 +432,12 @@ public class BlackBoxPanel extends JPanel implements MouseListener
                 if ((myGrid[i][j]).getStatus() == MysteryBox.STATUS_DEBUG_SHOW)
                     (myGrid[i][j]).setStatus(MysteryBox.STATUS_BLANK);
     }
+
     // --------------------------------------------------------------------------------- MouseListener required methods
-    @Override
     /**
-     * The user just let go of the mouse inside the panel. If it is on a MysteryBox, toggle its pencil status; otherwise
-     * if it is an edgeBox, process the shot from that edge.
-     */
+    * The user just let go of the mouse inside the panel. If it is on a MysteryBox, toggle its pencil status; otherwise
+    * if it is an edgeBox, process the shot from that edge.
+    */
     public void mouseReleased(MouseEvent e)
     {
         if (revealedMode) // ignore mouse in this panel if the balls are revealed.
@@ -474,13 +474,13 @@ public class BlackBoxPanel extends JPanel implements MouseListener
     @Override
     public void mousePressed(MouseEvent e)
     {
-        // intentionally blank. This method gets called if the user intially presses the mouse inside the panel.
+        // intentionally blank. This method gets called if the user initially presses the mouse inside the panel.
     }
 
     @Override
     public void mouseEntered(MouseEvent e)
     {
-        // intentionally blank. The user just moved the mouse into this panel frome elsewhere.
+        // intentionally blank. The user just moved the mouse into this panel from elsewhere.
     }
 
     @Override
