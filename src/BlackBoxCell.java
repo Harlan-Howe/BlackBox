@@ -13,4 +13,6 @@ public abstract class  BlackBoxCell
     public abstract void setStatus(int s);
 
     public abstract int getStatus();
+
+    public abstract boolean hasBall();
 }
