@@ -394,8 +394,8 @@ public class BlackBoxPanel extends JPanel implements MouseListener
      */
     public int[] findExitPoint(int[] startingPosition, int direction)
     {
-        // p and d are the location of the shot - they change over the course of this method, but the pos and direction
-        // don't.
+        // p and d are the location and direction of the shot as it moves - they change over the course of this method,
+        // but the startingPosition and direction don't change.
         int[] p = startingPosition;
         int d = direction;
 
@@ -403,7 +403,7 @@ public class BlackBoxPanel extends JPanel implements MouseListener
 
         // TODO: #6 write this method:
 
-        // do the following until you either hit a ball or exit the grid:
+        // do the following forever... until the return statements in 1 or 5 get you out of the eternal loop.
         //     1) Check whether the space in front of you has a ball. If so, return null.
         //     2) Check whether the space in front-right of you has a ball. If so...
         //           a) turn left in place.
